@@ -1,0 +1,81 @@
+{
+	"name": "utils-dev-krak",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build:type": "rm -rf dist && tsc -p tsconfig.build.json",
+		"build": "pnpm build:type && vite build",
+		"lint": "pnpm biome check --write src",
+		"preview": "vite preview",
+		"test": "vitest run",
+		"test:type": "vitest run --typecheck",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage --silent",
+		"test:ui": "vitest --ui",
+		"clean": "rm -rf node_modules && rm -rf dist && pnpm prune store && pnpm install"
+	},
+	"exports": {
+		"./common": {
+			"types": "./dist/common/index.d.ts",
+			"import": "./dist/common/index.js",
+			"require": "./dist/common/index.cjs"
+		},
+		"./react": {
+			"types": "./dist/react/index.d.ts",
+			"import": "./dist/react/index.js",
+			"require": "./dist/react/index.cjs"
+		}
+	},
+	"dependencies": {
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
+		"@types/node": "22.14.0",
+		"@types/react": "18.2.0",
+		"@types/react-dom": "18.2.0",
+		"@vitejs/plugin-react-swc": "^3.8.0",
+		"@vitest/coverage-v8": "^3.1.1",
+		"@vitest/ui": "^3.1.1",
+		"glob": "11.0.1",
+		"globals": "^15.15.0",
+		"jsdom": "^26.0.0",
+		"typescript": "5.7.2",
+		"vite": "^6.2.0",
+		"vitest": "^3.1.1"
+	},
+	"peerDependencies": {
+		"@types/react": ">=18.2.0",
+		"@types/react-dom": ">=18.2.0",
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0",
+		"typescript": ">=5.7.2"
+	},
+	"engines": {
+		"node": ">=23.11.0"
+	},
+	"packageManager": "pnpm@10.8.0",
+	"volta": {
+		"node": "23.11.0",
+		"pnpm": "10.8.0"
+	},
+	"author": "junhoKims",
+	"keywords": ["utils", "javascript", "react", "typescript"],
+	"files": ["dist", "README.md"],
+	"homepage": "https://github.com/junhoKims/utils-dev-krak",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/junhoKims/utils-dev-krak.git"
+	},
+	"bugs": {
+		"url": "https://github.com/junhoKims/utils-dev-krak/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
