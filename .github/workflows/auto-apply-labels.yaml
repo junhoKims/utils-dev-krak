@@ -1,0 +1,21 @@
+name: 🏷️ Auto Apply Labels
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  auto-labelling:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Control Label
+        uses: actions/labeler@v5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          sync-labels: true
