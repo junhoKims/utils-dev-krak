@@ -1,6 +1,6 @@
 {
 	"name": "utils-dev-krak",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -60,11 +60,11 @@
 		"typescript": ">=5.7.2"
 	},
 	"engines": {
-		"node": ">=23.11.0"
+		"node": ">=22.14.0"
 	},
 	"packageManager": "pnpm@10.8.0",
 	"volta": {
-		"node": "23.11.0",
+		"node": "22.14.0",
 		"pnpm": "10.8.0"
 	},
 	"author": "junhoKims",

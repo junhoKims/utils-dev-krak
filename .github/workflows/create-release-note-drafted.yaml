@@ -1,0 +1,33 @@
+name: 🚀 Create Release Note Drafted
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  auto-generate-release-note-drafted:
+    if: github.event.pull_request.merged == true
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create Release Note
+        uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          config-name: draft-release-note-config.yml
+          name: $RESOLVED_VERSION 🌈
+          tag: $RESOLVED_VERSION
