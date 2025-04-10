@@ -1,0 +1,35 @@
+name: 🧪 Run Test
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, reopened, synchronize]
+
+env:
+  TZ: "Asia/Seoul"
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: 'pnpm'
+
+      - name: Install Packages
+        run:
+          pnpm install
+
+      - name: Run Unit Test
+        if: ${{ always() }}
+        run:
+          pnpm test
