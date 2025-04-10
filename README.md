@@ -6,7 +6,7 @@ typescript로 작성된 react를 위한 유틸리티 함수 패키지
 
 아래와 같은 라이브러리 버전을 충족해야 합니다.
 
-```json
+```plain text
 react@>=18.2.0
 react-dom@>=18.2.0 
 @types/react@>=18.2.0
@@ -18,7 +18,7 @@ typescript@>=5.7.2
 
 명령어를 통해 패키지를 설치합니다.
 
-```json
+```plain text
 pnpm add utils-dev-krak
 ```
 
@@ -35,4 +35,4 @@ function func() {
 
 ## 기능
 
-문서링크 예정
+[문서](https://utils-dev-krak.vercel.app/)
