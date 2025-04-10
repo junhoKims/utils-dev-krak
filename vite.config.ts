@@ -24,9 +24,15 @@ const isFileExcluded = (filePath: string, exclude?: RegExp[]) => {
 
 // https://vite.dev/config/
 export default defineConfig({
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, 'src'),
+		},
+	},
 	build: {
 		outDir: 'dist',
 		emptyOutDir: false,
+		minify: 'esbuild',
 		lib: {
 			name: 'utils-dev-krak',
 			formats: ['es', 'cjs'],

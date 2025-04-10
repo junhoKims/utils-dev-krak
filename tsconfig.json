@@ -8,6 +8,13 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "types": [
+      "@types/react",
+      "@types/react-dom",
+      "@types/node",
+      "glob",
+      "vitest/globals"
+    ],
     "skipLibCheck": true,
     "module": "NodeNext",
     "moduleDetection": "force",
@@ -21,7 +28,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "src"
