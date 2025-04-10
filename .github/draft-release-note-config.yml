@@ -1,0 +1,38 @@
+categories:
+  - title: '✨ Features'
+    labels:
+      - 'feat'
+      - 'feature'
+      - 'refactor'
+      - 'style'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore'
+  - title: '🧪 Testing'
+    labels:
+      - 'test'
+  - title: '📄 Document'
+    labels:
+      - 'docs'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+exclude-labels:
+  - 'skip-release-draft'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+template: |
+  ## File Changed
+
+  $CHANGES

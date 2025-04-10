@@ -1,0 +1,37 @@
+name: 🚀 Deploy npm "utils" library
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy-npm-utils:
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+
+      - name: Publish npm
+        uses: JS-DevTools/npm-publish@v3
+        id: publish
+        with:
+          token: ${{ secrets.NPM_TOKEN_DEPLOY }}
+          package: "./package.json"
+
+      - name: After published
+        if: ${{ steps.publish.outputs.type }}
+        run: |
+          echo "${{steps.publish.outputs.name}} Version Changed!"
+          echo "'${{steps.publish.outputs.old-version}}' -> '${{steps.publish.outputs.version}}'"
+          gh workflow run .github/workflows/vercel-deploy-utils-docs-prod.yaml
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
