@@ -1,0 +1,65 @@
+{
+	"name": "utils-dev-krak",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build:type": "rm -rf dist && tsc -p tsconfig.build.json",
+		"build": "pnpm build:type && vite build",
+		"lint": "pnpm biome check --write src",
+		"preview": "vite preview",
+		"clean": "rm -rf node_modules && rm -rf dist && pnpm prune store && pnpm install"
+	},
+	"exports": {
+		"./core": {
+			"types": "./dist/core/index.d.ts",
+			"import": "./dist/core/index.js",
+			"require": "./dist/core/index.cjs"
+		}
+	},
+	"dependencies": {
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "22.14.0",
+		"@types/react": "18.2.0",
+		"@types/react-dom": "18.2.0",
+		"@vitejs/plugin-react-swc": "^3.8.0",
+		"glob": "11.0.1",
+		"globals": "^15.15.0",
+		"typescript": "5.7.2",
+		"vite": "^6.2.0"
+	},
+	"peerDependencies": {
+		"@types/react": ">=18.2.0",
+		"@types/react-dom": ">=18.2.0",
+		"react": ">=18.2.0",
+		"react-dom": ">=18.2.0",
+		"typescript": ">=5.7.2"
+	},
+	"engines": {
+		"node": ">=23.11.0"
+	},
+	"packageManager": "pnpm@10.8.0",
+	"volta": {
+		"node": "23.11.0",
+		"pnpm": "10.8.0"
+	},
+	"author": "junhoKims",
+	"keywords": ["utils", "javascript", "react", "typescript"],
+	"files": ["dist", "README.md"],
+	"homepage": "https://github.com/junhoKims/utils-dev-krak",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/junhoKims/utils-dev-krak.git"
+	},
+	"bugs": {
+		"url": "https://github.com/junhoKims/utils-dev-krak/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
