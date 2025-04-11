@@ -83,6 +83,7 @@
 	"bugs": {
 		"url": "https://github.com/junhoKims/utils-dev-krak/issues"
 	},
+	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
 	}
