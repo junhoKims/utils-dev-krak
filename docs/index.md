@@ -3,9 +3,12 @@
 layout: home
 
 hero:
-  name: "Utils Library"
-  text: "for React, Javscript"
-  tagline: Typescript로 작성된 javascript, react 유틸리티 패키지
+  name: "utils-dev-krak"
+  text: "for React, Javascript"
+  tagline: Typescript로 작성된 javascript와 react 유틸리티 패키지
+  image:
+    src: /logo.svg
+    alt: utils-dev-krak
   actions:
     - theme: alt
       text: Common
