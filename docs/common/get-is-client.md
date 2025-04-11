@@ -5,7 +5,7 @@
 ## example
 
 ```tsx
-import { getIsClient } from '@krakstack/utils/commons'
+import { getIsClient } from 'utils-dev-krak/common'
 
 const Comp = () => {
   useEffect(() => {

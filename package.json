@@ -28,6 +28,11 @@
 			"types": "./dist/react/index.d.ts",
 			"import": "./dist/react/index.js",
 			"require": "./dist/react/index.cjs"
+		},
+		"./types": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/types/index.js",
+			"require": "./dist/types/index.cjs"
 		}
 	},
 	"dependencies": {
