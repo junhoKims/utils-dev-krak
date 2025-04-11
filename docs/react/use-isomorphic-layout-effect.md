@@ -5,7 +5,7 @@
 ## example
 
 ```tsx
-import { useIsomorphicLayoutEffect } from '@krakstack/utils/react';
+import { useIsomorphicLayoutEffect } from 'utils-dev-krak/react';
 
 const Comp = () => {
   // 클라이언트 환경에서
