@@ -6,7 +6,7 @@
 		"dev": "vite",
 		"build:type": "rm -rf dist && tsc -p tsconfig.build.json",
 		"build": "pnpm build:type && vite build",
-		"lint": "pnpm biome check --write src",
+		"lint": "pnpm biome check --fix --unsafe src",
 		"preview": "vite preview",
 		"test": "vitest run",
 		"test:type": "vitest run --typecheck",
