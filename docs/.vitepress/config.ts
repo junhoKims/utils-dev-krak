@@ -7,6 +7,13 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	title: 'utils-dev-krak',
 	description: 'Typescript로 작성된 javascript, react 유틸리티 패키지',
+	head: [
+		['link', { rel: 'icon', href: '/logo.svg' }],
+		[
+			'meta',
+			{ name: 'keywords', content: 'utils, javascript, react, typescript' },
+		],
+	],
 	rewrites: {
 		'docs/:page1': ':page1',
 		'docs/:page1/:page2': ':page1/:page2',
