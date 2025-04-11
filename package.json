@@ -1,6 +1,6 @@
 {
 	"name": "utils-dev-krak",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -83,6 +83,7 @@
 	"bugs": {
 		"url": "https://github.com/junhoKims/utils-dev-krak/issues"
 	},
+	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
 	}
