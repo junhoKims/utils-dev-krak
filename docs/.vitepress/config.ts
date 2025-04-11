@@ -7,8 +7,15 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	title: 'utils-dev-krak',
 	description: 'Typescript로 작성된 javascript, react 유틸리티 패키지',
+	srcExclude: [resolve(import.meta.dirname, '../ADR/*.md')],
 	head: [
-		['link', { rel: 'icon', href: '/logo.svg' }],
+		[
+			'link',
+			{
+				rel: 'icon',
+				href: 'https://upca0d96g9idodwm.public.blob.vercel-storage.com/blog-dev-krak/logo-eiIzJ3v2VLz0RqjO67Nqj2pUNrTyd7.svg',
+			},
+		],
 		[
 			'meta',
 			{ name: 'keywords', content: 'utils, javascript, react, typescript' },
@@ -19,6 +26,7 @@ export default defineConfig({
 		'docs/:page1/:page2': ':page1/:page2',
 	},
 	themeConfig: {
+		logo: 'https://upca0d96g9idodwm.public.blob.vercel-storage.com/blog-dev-krak/logo-eiIzJ3v2VLz0RqjO67Nqj2pUNrTyd7.svg',
 		search: {
 			provider: 'local',
 		},
@@ -53,7 +61,7 @@ export default defineConfig({
 
 		socialLinks: [
 			{ icon: 'github', link: 'https://github.com/junhoKims/utils-dev-krak' },
-			{ icon: 'npm', link: 'https://github.com/junhoKims/utils-dev-krak' },
+			{ icon: 'npm', link: 'https://www.npmjs.com/package/utils-dev-krak' },
 		],
 	},
 });

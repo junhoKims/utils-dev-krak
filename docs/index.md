@@ -7,7 +7,7 @@ hero:
   text: "for React, Javascript"
   tagline: Typescript로 작성된 javascript와 react 유틸리티 패키지
   image:
-    src: /logo.svg
+    src: https://upca0d96g9idodwm.public.blob.vercel-storage.com/blog-dev-krak/logo-eiIzJ3v2VLz0RqjO67Nqj2pUNrTyd7.svg
     alt: utils-dev-krak
   actions:
     - theme: alt
