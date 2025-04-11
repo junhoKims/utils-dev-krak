@@ -12,6 +12,9 @@ export default defineConfig({
 		'docs/:page1/:page2': ':page1/:page2',
 	},
 	themeConfig: {
+		search: {
+			provider: 'local',
+		},
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [
 			{ text: 'Home', link: '/' },
