@@ -9,11 +9,12 @@
       "DOM.Iterable"
     ],
     "types": [
-      "@types/react",
-      "@types/react-dom",
-      "@types/node",
+      "react",
+      "react-dom",
+      "node",
       "glob",
-      "vitest/globals"
+      "vitest/globals",
+      "@testing-library/jest-dom"
     ],
     "skipLibCheck": true,
     "module": "NodeNext",
