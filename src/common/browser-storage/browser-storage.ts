@@ -21,7 +21,7 @@ export class BrowserStorage<TKey, TValue> {
 	/**
 	 * 스토리지에 저장된 Data Model을 mapper를 통해 파싱 후 반환
 	 */
-	get(): TValue {
+	get(): TValue | null {
 		return this.mapper.fromJson(
 			BrowserStorageHelper.get(this.key, this.storageType),
 		);
@@ -50,7 +50,7 @@ export class BrowserStorage<TKey, TValue> {
  * BrowserStorage와 Data Model을 처리하는 매퍼 인터페이스
  */
 export interface BrowserStorageMapper<TValue> {
-	fromJson(json: any): TValue;
+	fromJson(json: any): TValue | null;
 	toJson(target: TValue): any;
 }
 
@@ -77,6 +77,16 @@ class BrowserStorageHelper {
 }
 
 const getStorage = (storageType: BrowserStorageType) => {
+	if (typeof window === 'undefined') {
+		console.warn('BrowserStorage is not available on server-side.');
+
+		return {
+			getItem: () => null,
+			setItem: () => {},
+			removeItem: () => {},
+		} as unknown as Storage;
+	}
+
 	return storageType === BrowserStorageType.localStorage
 		? localStorage
 		: sessionStorage;
