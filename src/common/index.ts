@@ -1,3 +1,4 @@
+export * from './browser-storage/index.js';
 export * from './chunk.js';
 export * from './clone-deep.js';
 export * from './flatten.js';
