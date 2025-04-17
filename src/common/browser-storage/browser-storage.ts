@@ -3,7 +3,7 @@ import { BrowserStorageType } from './constants.js';
 /**
  * 하나의 Data Model을 제어하는 로컬스토리지 | 세션스토리지 클래스
  */
-export class BrowserStorage<TKey, TValue> {
+export class BrowserStorage<TKey extends string, TValue> {
 	private key: TKey;
 	private mapper: BrowserStorageMapper<TValue>;
 	private storageType: BrowserStorageType;
