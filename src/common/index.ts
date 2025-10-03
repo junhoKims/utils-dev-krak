@@ -1,4 +1,5 @@
 export * from './browser-storage/index.js';
+export * from './capitalize.js';
 export * from './chunk.js';
 export * from './clone-deep.js';
 export * from './flatten.js';
@@ -9,5 +10,6 @@ export * from './is-nil.js';
 export * from './object-keys.js';
 export * from './omit.js';
 export * from './pick.js';
+export * from './slugify.js';
 export * from './sum.js';
 export * from './with-comma.js';
