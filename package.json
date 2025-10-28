@@ -65,13 +65,9 @@
 		"typescript": ">=5.7.2"
 	},
 	"engines": {
-		"node": "22.x"
+		"node": ">=22.21.0"
 	},
-	"packageManager": "pnpm@10.8.0",
-	"volta": {
-		"node": "22.14.0",
-		"pnpm": "10.8.0"
-	},
+	"packageManager": "pnpm@10.19.0",
 	"author": "junhoKims",
 	"keywords": [
 		"utils",
