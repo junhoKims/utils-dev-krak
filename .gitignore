@@ -29,3 +29,6 @@ coverage
 # vitepress
 **/.vitepress/cache/
 **/.vitepress/dist/
+
+.env
+.env.*
