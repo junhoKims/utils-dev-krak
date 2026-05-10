@@ -24,15 +24,18 @@
     "access": "public"
   },
   "scripts": {
-    "build": "vp pack",
+    "build": "vp run pack:cache",
     "dev": "vp pack --watch",
-    "test": "vp test",
-    "check": "vp check",
-    "prepublishOnly": "vp run build"
+    "test": "vp run test:cache",
+    "test:watch": "vp run test watch",
+    "check": "vp run check:fix:cache",
+    "prepublishOnly": "vp run build",
+    "clean:cache": "vp cache clean"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
     "@typescript/native-preview": "7.0.0-dev.20260328.1",
+    "@vitest/coverage-v8": "^4.1.5",
     "bumpp": "^11.0.1",
     "typescript": "^6.0.2",
     "vite-plus": "^0.1.14"
