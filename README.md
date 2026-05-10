@@ -1,38 +1,23 @@
-# utils-dev-krak
+# vite-plus-starter
 
-typescript로 작성된 react를 위한 유틸리티 함수 패키지
+A starter for creating a Vite Plus project.
 
-## 조건
+## Development
 
-아래와 같은 라이브러리 버전을 충족해야 합니다.
+- Install dependencies:
 
-```plain text
-react@>=18.2.0
-react-dom@>=18.2.0 
-@types/react@>=18.2.0
-@types/react-dom@>=18.2.0
-typescript@>=5.7.2
+```bash
+vp install
 ```
 
-## 사용
+- Run the unit tests:
 
-명령어를 통해 패키지를 설치합니다.
-
-```plain text
-pnpm add utils-dev-krak
+```bash
+vp test
 ```
 
-아래와 같이 import하여 사용합니다.
+- Build the library:
 
-```ts
-import { sum } from 'utils-dev-krak/common';
-
-function func() {
-  const total = sum(1,2,3);
-  return total;
-}
+```bash
+vp pack
 ```
-
-## 기능
-
-[문서](https://utils-dev-krak.vercel.app/)
