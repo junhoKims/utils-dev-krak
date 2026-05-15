@@ -30,9 +30,34 @@ describe('BrowserStorage', () => {
 		}
 	}
 
+	beforeEach(() => {
+		if (typeof localStorage === 'undefined') {
+			const storage: Record<string, string> = {};
+			vi.stubGlobal('localStorage', {
+				getItem: (key: string) => storage[key] || null,
+				setItem: (key: string, value: string) => {
+					storage[key] = value;
+				},
+				removeItem: (key: string) => {
+					delete storage[key];
+				},
+				clear: () => {
+					for (const key in storage) {
+						delete storage[key];
+					}
+				},
+			});
+		}
+	});
+
 	afterEach(() => {
-		localStorage.clear();
-		sessionStorage.clear();
+		if (typeof localStorage !== 'undefined') {
+			localStorage.clear();
+		}
+		if (typeof sessionStorage !== 'undefined') {
+			sessionStorage.clear();
+		}
+		vi.unstubAllGlobals();
 	});
 
 	test('`Model` 데이터를 localStorage에 저장할 수 있다', () => {
@@ -76,15 +101,13 @@ describe('BrowserStorage', () => {
 	});
 
 	describe('BrowserStorage in "Server" environment', () => {
-		const originalWindow = globalThis.window;
-
 		beforeEach(() => {
-			(globalThis.window as Window | undefined) = undefined;
-			vi.spyOn(console, 'warn');
+			vi.stubGlobal('window', undefined);
+			vi.spyOn(console, 'warn').mockImplementation(() => {});
 		});
 
 		afterEach(() => {
-			globalThis.window = originalWindow;
+			vi.unstubAllGlobals();
 			vi.restoreAllMocks();
 		});
 
