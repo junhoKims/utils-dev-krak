@@ -9,6 +9,7 @@ export * from './is-empty.js';
 export * from './is-nil.js';
 export * from './object-keys.js';
 export * from './omit.js';
+export * from './partial.js';
 export * from './pick.js';
 export * from './slugify.js';
 export * from './sum.js';

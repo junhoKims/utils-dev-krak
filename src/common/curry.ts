@@ -36,8 +36,8 @@ type Curried<P extends readonly unknown[], R> = P extends readonly [
 export function curry<P extends readonly unknown[], R>(
 	fn: (...args: P) => R,
 ): Curried<P, R> {
-	if (typeof fn !== "function") {
-		throw new TypeError("curry: argument must be a function");
+	if (typeof fn !== 'function') {
+		throw new TypeError('curry: argument must be a function');
 	}
 
 	const collect = (collected: unknown[]): unknown =>
